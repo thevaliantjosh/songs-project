@@ -2,35 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Web API Tutorial</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/songs_project.css">
     <script src="js/keys.js"></script>
 </head>
 <body>
-<div>
-    <div id="login">
-        <h1>First, log in to spotify</h1>
-        <a href="/login">Log in</a>
-    </div>
-    <div id="loggedin">
+<div class="container">
+    <form action="">
+        <input type="hidden" id='hidden_token'>
+        <div class="col-sm-6 form-group row mt-4 px-0">
+            <label for="select_genre" class="form-label col-sm-2">Genre:</label>
+            <select name="" id="select_genre" class="form-control form-control-sm col-sm-10">
+                <option>Select...</option>
+            </select>
+        </div>
+        <div class="col-sm-6 form-group row px-0">
+            <label for="select_playlist" class="form-label col-sm-2">Playlists:</label>
+            <select name="" id="select_playlist" class="form-control form-control-sm col-sm-10">
+                <option>Select...</option>
+            </select>
+        </div>
+        <div class="col-sm-6 row form-group px-0">
+            <button type="submit" id="btn_submit" class="btn btn-success col-sm-12">Search</button>
+        </div>
+    </form>
+    <div class="row">
+        <div class="col-sm-6 px-0">
+            <div class="list-group song-list">
+
+            </div>
+        </div>
+        <div class="offset-md-1 col-sm-4" id="song-detail">
+        </div>
     </div>
 </div>
-
-<script id="loggedin-template" type="text/x-handlebars-template">
-    <h1>Logged in as </h1>
-    <img id="avatar" width="200" src="" />
-    <dl>
-        <dt>Display name</dt><dd></dd>
-        <dt>Username</dt><dd></dd>
-        <dt>Email</dt><dd></dd>
-        <dt>Spotify URI</dt><dd><a href=""></a></dd>
-        <dt>Link</dt><dd><a href=""></a></dd>
-        <dt>Profile Image</dt><dd></dd>
-    </dl>
-    <p><a href="/">Log in again</a></p>
-</script>
-</body>
-<script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
-<script src="authorization_code/authorization_code.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="js/songs-project.js"></script>
-
+</body>
 </html>
