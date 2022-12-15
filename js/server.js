@@ -1,4 +1,4 @@
-let http = require('js/spotify-web-api.js');
+let http = require('http');
 
 http
     .createServer(function(request, response) {

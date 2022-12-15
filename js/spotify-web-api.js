@@ -6,7 +6,7 @@
  */
 var SpotifyWebApi = (function () {
     var _baseUri = 'https://api.spotify.com/v1';
-    var _accessToken = SPOTIFY_CLIENT_ID;
+    var _accessToken = null;
     var _promiseImplementation = null;
 
     var WrapPromiseWithAbort = function (promise, onAbort) {
